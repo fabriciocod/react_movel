@@ -1,17 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-const Cat = () =>{
-  return <Text>Hello, I am a cat!</Text>
+const getNomeCompleto = (nome, sobrenome) =>{
+  return nome + ' ' + sobrenome;
 }
 
-export default Cat;
+const Cat = () =>{
+  const name = "Gafield"
+  return <Text>Hello, I am {getNomeCompleto("Garfield", "Lasanha").toUpperCase()}!</Text>
+}
 
-function App() {
+export default IFAL;
+
+function IFAL() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text>Inicalização do App em React Native</Text>
+      {/* <Text>Open up App.js to start working on your app!</Text>
+      <Text>Inicalização do App em React Native</Text> */}
+      <Cat />
+      <Cat />
+      <Cat />
       <StatusBar style="auto" />
     </View>
   );
