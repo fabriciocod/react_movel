@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 const getNomeCompleto = (nome, sobrenome) =>{
   return nome + ' ' + sobrenome;
@@ -21,6 +22,9 @@ const Cat = ({nome, sobrenome, idade}) =>{
 export default IFAL;
 
 function IFAL() {
+
+  const [cliques, setCliques] = useState(0);
+
   return (
     <View style={styles.container}>
       {/* <Text>Open up App.js to start working on your app!</Text>
@@ -30,6 +34,16 @@ function IFAL() {
       <Cat nome="Apolo" sobrenome="Grego" idade={8}/>
       <Cat nome="Mandachuva" sobrenome="trambiqueiro" idade={1}/>
       <StatusBar style="auto" />
+
+      <Button title="Aperte este botão" onPress={() => {
+        setCliques(cliques + 1);
+      }}/>
+
+<Button title="Aperte para Zera" onPress={() => {
+        setCliques(0);
+      }}/>
+      
+      <Text>Quantidade de cliques: {cliques}</Text>
     </View>
   );
 }
