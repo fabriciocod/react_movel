@@ -5,9 +5,9 @@ const getNomeCompleto = (nome, sobrenome) =>{
   return nome + ' ' + sobrenome;
 }
 
-const Cat = ({nome, sobrenome}) =>{
+const Cat = ({nome, sobrenome, idade}) =>{
   const name = "Gafield"
-  return <Text>Hello, I am {getNomeCompleto(nome, sobrenome).toUpperCase()}!</Text>
+  return <Text>Olá, Eu sou {getNomeCompleto(nome, sobrenome).toUpperCase()} tenho {idade} anos de idade!</Text>
 }
 
 export default IFAL;
@@ -17,9 +17,9 @@ function IFAL() {
     <View style={styles.container}>
       {/* <Text>Open up App.js to start working on your app!</Text>
       <Text>Inicalização do App em React Native</Text> */}
-      <Cat nome="Black" sobrenome="Moon"/>
-      <Cat nome="Garfilde" sobrenome="3°"/>
-      <Cat nome="Apolo" sobrenome="Grego"/>
+      <Cat nome="Black" sobrenome="Moon" idade={4}/>
+      <Cat nome="Garfilde" sobrenome="3°" idade={45}/>
+      <Cat nome="Apolo" sobrenome="Grego" idade={8}/>
       <StatusBar style="auto" />
     </View>
   );
