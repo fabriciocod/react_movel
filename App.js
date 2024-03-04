@@ -6,8 +6,16 @@ const getNomeCompleto = (nome, sobrenome) =>{
 }
 
 const Cat = ({nome, sobrenome, idade}) =>{
-  const name = "Gafield"
-  return <Text>Olá, Eu sou {getNomeCompleto(nome, sobrenome).toUpperCase()} tenho {idade} anos de idade!</Text>
+  // const name = "Gafield"
+
+  // let texto ="anos";
+  // if(idade <= 1){
+  //   texto = "ano";
+  // }
+
+  const texto = (idade <= 1) ? "ano" : "anos" // if ternário utilizar apenas quando houver apenas uma condição para afirmação.
+
+  return <Text>Olá, Eu sou {getNomeCompleto(nome, sobrenome).toUpperCase()} tenho {idade} {texto}!</Text>
 }
 
 export default IFAL;
@@ -20,6 +28,7 @@ function IFAL() {
       <Cat nome="Black" sobrenome="Moon" idade={4}/>
       <Cat nome="Garfilde" sobrenome="3°" idade={45}/>
       <Cat nome="Apolo" sobrenome="Grego" idade={8}/>
+      <Cat nome="Mandachuva" sobrenome="trambiqueiro" idade={1}/>
       <StatusBar style="auto" />
     </View>
   );
