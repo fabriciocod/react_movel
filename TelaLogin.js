@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, StyteSheet} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet} from 'react-native';
 
 const TelaLogin = () => {
   const [email, setEmail] = useState('');
@@ -30,8 +30,16 @@ const TelaLogin = () => {
       secureTextEntry
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
-      <Text styles={styles.buttonText}>Entra</Text>
+      <Text style={styles.buttonText}>Entra</Text>
       </TouchableOpacity>
+
+      <Text style={styles.text_recupera}>Recuperar Senha</Text>
+
+      <Text style={styles.text_aviso}>
+        O acesso está protegido pelo Google{'\n'}
+        reCAPTCHA para garantir que você não é um robô.
+        Saiba mais.
+        </Text>
       </View>
   );
 };
@@ -41,16 +49,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'fff',
+    backgroundColor: '#000',
   },
   logo: {
-    width: 150,
+    width: 225,
     height: 150,
     marginBottom: 30,
   },
   input: {
     width: '80%',
     height: 50,
+    backgroundColor: '#b3b3b3',
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 4,
@@ -60,15 +69,31 @@ const styles = StyleSheet.create({
   button: {
     width: '80%',
     height: 50,
-    backgroundColor: '#007bff',
+    backgroundColor: '#BD0303',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
+    // borderWidth: 3,
+    // borderColor: '#404040',
   },
   buttonText: {
     color: '#fff',
     fontSize: 18,
   },
+  text_recupera: {
+    color: '#fff',
+    paddingVertical: 20,
+    alignItems: 'center',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  text_aviso: {
+    color: '#fff',
+    paddingVertical: 10,
+    textAlign: 'center',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
 });
 
-export default TelaLogin
+export default TelaLogin;

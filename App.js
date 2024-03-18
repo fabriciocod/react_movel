@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import Calculadora from './calc';
+import TelaLogin from './TelaLogin';
 
 const getNomeCompleto = (nome, sobrenome) =>{
   return nome + ' ' + sobrenome;
@@ -20,7 +21,7 @@ const Cat = ({nome, sobrenome, idade}) =>{
   return <Text>Olá, Eu sou {getNomeCompleto(nome, sobrenome).toUpperCase()} tenho {idade} {texto}!</Text>
 }
 
-export default Calculadora;
+export default TelaLogin;
 
 function IFAL() {
 
