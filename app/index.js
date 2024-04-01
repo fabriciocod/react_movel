@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import Calculadora from './calc';
-import TelaLogin from './TelaLogin';
+import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Link } from 'expo-router'
+
 
 const getNomeCompleto = (nome, sobrenome) =>{
   return nome + ' ' + sobrenome;
@@ -21,11 +20,9 @@ const Cat = ({nome, sobrenome, idade}) =>{
   return <Text>Olá, Eu sou {getNomeCompleto(nome, sobrenome).toUpperCase()} tenho {idade} {texto}!</Text>
 }
 
-export default TelaLogin;
-
 function IFAL() {
 
-  const [cliques, setCliques] = useState(0);
+ 
 
   return (
     <View style={styles.container}>
@@ -37,15 +34,18 @@ function IFAL() {
       <Cat nome="Mandachuva" sobrenome="trambiqueiro" idade={1}/>
       <StatusBar style="auto" />
 
-      <Button title="Aperte este botão" onPress={() => {
-        setCliques(cliques + 1);
-      }}/>
-
-<Button title="Aperte para Zera" onPress={() => {
-        setCliques(0);
-      }}/>
+      <Link href="/cliques">Cliques</Link>
+      <Link href="/calc">Abrir Calculadora</Link>
       
-      <Text>Quantidade de cliques: {cliques}</Text>
+      <Link href="/calc" asChild>
+        <Pressable>
+          <Text>Abrir Calculadora com o Pressable</Text>
+        </Pressable>
+      </Link>
+
+      <Link href="/calc" asChild>
+        <Button title="Abrir calculadora com Buttonr"/>
+      </Link>
     </View>
   );
 }
@@ -58,3 +58,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default IFAL;
